@@ -1,26 +1,47 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgux6yoa27pn7"]
+[gd_scene load_steps=11 format=3 uid="uid://bgux6yoa27pn7"]
 
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_armd4"]
 [ext_resource type="Texture2D" uid="uid://dho0aje41r3ev" path="res://assets/Fundo1.png" id="1_ur4to"]
 [ext_resource type="PackedScene" uid="uid://d2g24gi0wut1t" path="res://scenes/player.tscn" id="2_4ccv2"]
 [ext_resource type="PackedScene" uid="uid://se4rfnlt3sms" path="res://scenes/ball.tscn" id="3_1u5ni"]
+[ext_resource type="FontFile" uid="uid://c1okgon3peiy8" path="res://assets/fonts/Baloo_Thambi_2/static/BalooThambi2-ExtraBold.ttf" id="3_4fyju"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mqw8d"]
+font = ExtResource("3_4fyju")
+font_size = 250
+font_color = Color(0.428084, 0.00224636, 0.893692, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pj1du"]
 size = Vector2(567, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f6w30"]
-size = Vector2(18, 986)
+size = Vector2(18, 949)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6pyc2"]
-size = Vector2(573, 39)
+size = Vector2(573, 36)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bwvdb"]
+font = ExtResource("3_4fyju")
+font_size = 38
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_armd4")
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_ur4to")
 centered = false
 
+[node name="Pongs" type="Label" parent="."]
+visible = false
+offset_right = 539.0
+offset_bottom = 960.0
+text = "0"
+label_settings = SubResource("LabelSettings_mqw8d")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Player" parent="." instance=ExtResource("2_4ccv2")]
-position = Vector2(270, 464)
+position = Vector2(270, 632)
 
 [node name="Walls" type="Node" parent="."]
 
@@ -34,22 +55,33 @@ shape = SubResource("RectangleShape2D_pj1du")
 position = Vector2(-1, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall"]
-position = Vector2(-7, 483)
+position = Vector2(-7, 476.5)
 shape = SubResource("RectangleShape2D_f6w30")
 
 [node name="RightWall" type="StaticBody2D" parent="Walls"]
 position = Vector2(555, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall"]
-position = Vector2(-7, 483)
+position = Vector2(-7, 479.5)
 shape = SubResource("RectangleShape2D_f6w30")
 
 [node name="Hole" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hole"]
-position = Vector2(270.5, 974.5)
+position = Vector2(270.5, 976)
 shape = SubResource("RectangleShape2D_6pyc2")
 debug_color = Color(0.995411, 0, 0.20572, 0.42)
 
 [node name="Ball" parent="." instance=ExtResource("3_1u5ni")]
-position = Vector2(270, 434)
+z_index = 1
+position = Vector2(270, 602)
+
+[node name="Tutorial" type="Label" parent="."]
+offset_right = 540.0
+offset_bottom = 960.0
+text = "Press 'space' to start game"
+label_settings = SubResource("LabelSettings_bwvdb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Hole" to="." method="_on_hole_body_entered"]

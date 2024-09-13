@@ -1,9 +1,11 @@
 extends CharacterBody2D
 
+const INCREMENTAL_SPEED = 1.02
+
 var started = false
 var start_speed = 500
-const INCREMENTAL_SPEED = 1.01
 var angle = [-250, 250]
+var pongs = 0
 
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_accept") and started == false:
@@ -12,7 +14,11 @@ func _physics_process(delta):
 	if started:
 		var collision = move_and_collide(velocity * delta)
 		if collision != null:
-			velocity = velocity.bounce(collision.get_normal()) * INCREMENTAL_SPEED
+			if collision.get_collider().name == "TopWall":
+				pongs += 1
+				velocity = velocity.bounce(collision.get_normal()) * INCREMENTAL_SPEED
+			else:
+				velocity = velocity.bounce(collision.get_normal())
 
 func start_game():
 	started = true
