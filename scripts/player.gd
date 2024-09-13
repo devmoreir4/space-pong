@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 350.0
+const SPEED = 400.0
 
 var ball
 

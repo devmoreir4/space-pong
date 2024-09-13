@@ -43,7 +43,7 @@ vertical_alignment = 1
 [node name="Player" parent="." instance=ExtResource("2_4ccv2")]
 position = Vector2(270, 632)
 
-[node name="Walls" type="Node" parent="."]
+[node name="Walls" type="Node2D" parent="."]
 
 [node name="TopWall" type="StaticBody2D" parent="Walls"]
 
@@ -84,4 +84,23 @@ label_settings = SubResource("LabelSettings_bwvdb")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Positions" type="Node2D" parent="."]
+
+[node name="Pos01" type="Marker2D" parent="Positions"]
+position = Vector2(-182, 75)
+
+[node name="Pos02" type="Marker2D" parent="Positions"]
+position = Vector2(-185, 307)
+
+[node name="Pos03" type="Marker2D" parent="Positions"]
+position = Vector2(684, 82)
+
+[node name="Pos04" type="Marker2D" parent="Positions"]
+position = Vector2(688, 225)
+
+[node name="TimerSpawner" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
 [connection signal="body_entered" from="Hole" to="." method="_on_hole_body_entered"]
+[connection signal="timeout" from="TimerSpawner" to="." method="_on_timer_spawner_timeout"]
