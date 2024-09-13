@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 const INCREMENTAL_SPEED = 1.02
+const MAX_SPEED = 1500
 
 var started = false
 var start_speed = 500
@@ -15,8 +16,12 @@ func _physics_process(delta):
 		var collision = move_and_collide(velocity * delta)
 		if collision != null:
 			if collision.get_collider().name == "TopWall":
-				pongs += 1
-				velocity = velocity.bounce(collision.get_normal()) * INCREMENTAL_SPEED
+				if(velocity.length() > MAX_SPEED):
+					pongs += 1
+					velocity = velocity.bounce(collision.get_normal())
+				else:
+					pongs += 1
+					velocity = velocity.bounce(collision.get_normal()) * INCREMENTAL_SPEED
 			else:
 				velocity = velocity.bounce(collision.get_normal())
 

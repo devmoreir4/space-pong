@@ -12,6 +12,7 @@ var asteroid_scene = preload("res://scenes/asteroid.tscn")
 var resource_asteroids = {}
 var resource_background = {}
 var resource_colors_label = {}
+var new_asteroid_color
 
 func _ready():
 	preload_resources()
@@ -42,6 +43,8 @@ func spawn_asteroid():
 		if (spawn_position != last_position):
 			var asteroid_instance = asteroid_scene.instantiate()
 			asteroid_instance.global_position = spawn_position.position
+			if new_asteroid_color != null:
+				asteroid_instance.get_node("Sprite2D").texture = new_asteroid_color
 			add_child(asteroid_instance)
 			last_position = spawn_position
 		else:
@@ -104,3 +107,5 @@ func update_asteroids(key_asteroid):
 	
 	for asteroid in asteroids:
 		asteroid.get_node("Sprite2D").texture = resource_asteroids[key_asteroid]
+		
+	new_asteroid_color = resource_asteroids[key_asteroid]
