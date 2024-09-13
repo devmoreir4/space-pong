@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d2g24gi0wut1t"]
 
-[ext_resource type="Texture2D" uid="uid://dj0nd0tcia5el" path="res://assets/Raquete.png" id="1_oc4xx"]
+[ext_resource type="Texture2D" uid="uid://dj0nd0tcia5el" path="res://assets/images/Raquete.png" id="1_oc4xx"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_vj6e1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wuyqt"]

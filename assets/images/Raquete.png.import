@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dd3jqravjp6ex"
-path="res://.godot/imported/Bola.png-548c508210c32bec3c96b44f5181ad1c.ctex"
+uid="uid://dj0nd0tcia5el"
+path="res://.godot/imported/Raquete.png-a61711569436a90b54f9023d73182709.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Bola.png"
-dest_files=["res://.godot/imported/Bola.png-548c508210c32bec3c96b44f5181ad1c.ctex"]
+source_file="res://assets/images/Raquete.png"
+dest_files=["res://.godot/imported/Raquete.png-a61711569436a90b54f9023d73182709.ctex"]
 
 [params]
 

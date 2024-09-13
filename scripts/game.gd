@@ -52,21 +52,21 @@ func spawn_asteroid():
 
 func preload_resources():
 	resource_asteroids = {
-		"asteroid1" : preload("res://assets/Asteroide1.png"),
-		"asteroid2" : preload("res://assets/Asteroide2.png"),
-		"asteroid3" : preload("res://assets/Asteroide3.png"),
-		"asteroid4" : preload("res://assets/Asteroide4.png"),
-		"asteroid5" : preload("res://assets/Asteroide5.png"),
-		"asteroid6" : preload("res://assets/Asteroide6.png")
+		"asteroid1" : preload("res://assets/images/Asteroide1.png"),
+		"asteroid2" : preload("res://assets/images/Asteroide2.png"),
+		"asteroid3" : preload("res://assets/images/Asteroide3.png"),
+		"asteroid4" : preload("res://assets/images/Asteroide4.png"),
+		"asteroid5" : preload("res://assets/images/Asteroide5.png"),
+		"asteroid6" : preload("res://assets/images/Asteroide6.png")
 	}
 	
 	resource_background = {
-		"background1" : preload("res://assets/Fundo1.png"),
-		"background2" : preload("res://assets/Fundo2.png"),
-		"background3" : preload("res://assets/Fundo3.png"),
-		"background4" : preload("res://assets/Fundo4.png"),
-		"background5" : preload("res://assets/Fundo5.png"),
-		"background6" : preload("res://assets/Fundo6.png")
+		"background1" : preload("res://assets/images/Fundo1.png"),
+		"background2" : preload("res://assets/images/Fundo2.png"),
+		"background3" : preload("res://assets/images/Fundo3.png"),
+		"background4" : preload("res://assets/images/Fundo4.png"),
+		"background5" : preload("res://assets/images/Fundo5.png"),
+		"background6" : preload("res://assets/images/Fundo6.png")
 	}
 	
 	resource_colors_label = {
