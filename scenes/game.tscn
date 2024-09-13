@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgux6yoa27pn7"]
+[gd_scene load_steps=7 format=3 uid="uid://bgux6yoa27pn7"]
 
 [ext_resource type="Texture2D" uid="uid://dho0aje41r3ev" path="res://assets/Fundo1.png" id="1_ur4to"]
 [ext_resource type="PackedScene" uid="uid://d2g24gi0wut1t" path="res://scenes/player.tscn" id="2_4ccv2"]
+[ext_resource type="PackedScene" uid="uid://se4rfnlt3sms" path="res://scenes/ball.tscn" id="3_1u5ni"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pj1du"]
 size = Vector2(567, 20)
@@ -49,3 +50,6 @@ shape = SubResource("RectangleShape2D_f6w30")
 position = Vector2(270.5, 974.5)
 shape = SubResource("RectangleShape2D_6pyc2")
 debug_color = Color(0.995411, 0, 0.20572, 0.42)
+
+[node name="Ball" parent="." instance=ExtResource("3_1u5ni")]
+position = Vector2(270, 434)
